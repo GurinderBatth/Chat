@@ -14,6 +14,7 @@
 		A65B729B20B93C800052243C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65B729920B93C800052243C /* LaunchScreen.storyboard */; };
 		A65B72A620B93C810052243C /* ChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B72A520B93C810052243C /* ChatAppTests.swift */; };
 		A65B72B120B93C810052243C /* ChatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65B72B020B93C810052243C /* ChatAppUITests.swift */; };
+		A65B72C020B940770052243C /* Chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A65B72BE20B940770052243C /* Chat.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A65B72AC20B93C810052243C /* ChatAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65B72B020B93C810052243C /* ChatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatAppUITests.swift; sourceTree = "<group>"; };
 		A65B72B220B93C810052243C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A65B72BF20B940770052243C /* Chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chat.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		A65B728420B93C800052243C = {
 			isa = PBXGroup;
 			children = (
+				A65B72BE20B940770052243C /* Chat.xcdatamodeld */,
 				A65B728F20B93C800052243C /* ChatApp */,
 				A65B72A420B93C810052243C /* ChatAppTests */,
 				A65B72AF20B93C810052243C /* ChatAppUITests */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65B72C020B940770052243C /* Chat.xcdatamodeld in Sources */,
 				A65B729320B93C800052243C /* ViewController.swift in Sources */,
 				A65B729120B93C800052243C /* AppDelegate.swift in Sources */,
 			);
@@ -552,6 +556,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A65B72BE20B940770052243C /* Chat.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A65B72BF20B940770052243C /* Chat.xcdatamodel */,
+			);
+			currentVersion = A65B72BF20B940770052243C /* Chat.xcdatamodel */;
+			path = Chat.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A65B728520B93C800052243C /* Project object */;
 }
