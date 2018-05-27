@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class ViewController: UIViewController {
     
@@ -16,6 +17,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        do {
+            try Auth.auth().signOut()
+        } catch let err {
+            print(err)
+        }
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -24,9 +33,24 @@ class ViewController: UIViewController {
     
 //MARK:-  IBAction Methods
     @IBAction func btnLogin(_ sender: Any?){
-        
-    }
-    
-    
+        guard let email = textFieldEmail.text else { return }
+        guard let password = textFieldPassword.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { (auth, err) in
+            if err != nil{
+                print(err?.localizedDescription)
+            }else{
+                
+                guard let uid = auth?.user.uid else {
+                    return
+                }
+                Database.database().reference().child("users").child(uid).observeSingleEvent(of: DataEventType.value, with: { (snapShot) in
+                    let allMembersController = self.storyboard?.instantiateViewController(withIdentifier: "AllMemmbersTableViewController") as! AllMemmbersTableViewController
+                    let dict = snapShot.value as? [String: String]
+                    allMembersController.navigationItem.title = dict?["name"]
+                    self.navigationController?.pushViewController(allMembersController, animated: true)
+                })
+            }
+        }
+    }    
 }
 

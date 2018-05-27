@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class SignupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -51,26 +52,35 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate, U
 //MARK:-   IBAction Methods
     
     @IBAction func btnSignUp(_ sender: Any?){
-        if textFieldName.text == nil{
-            return
-        }else if textFieldEmail.text == nil{
-            return
-        }else if textFieldPassword.text == nil{
-            return
-        }
-        let appDelegate  = UIApplication.shared.delegate as? AppDelegate
-        if let context = appDelegate?.persistentContainer.viewContext{
-            let entity = Users(context: context)
-            entity.email = textFieldEmail.text
-            entity.password = textFieldPassword.text
-            entity.name = textFieldName.text
-            
-            do {
-                try context.save()
-                self.navigationController?.popViewController(animated: true)
-            }catch let err{
-                print(err.localizedDescription)
+        
+        guard let name = textFieldName.text else { return }
+
+        guard let email = textFieldEmail.text else { return }
+        
+        guard let password = textFieldPassword.text else { return }
+
+        self.view.isUserInteractionEnabled = false
+        Auth.auth().createUser(withEmail: email, password: password) { (auth, error) in
+            if error != nil{
+                print(error?.localizedDescription)
+                return
             }
+            guard let uid = auth?.user.uid else {
+                return
+            }
+            
+            let ref = Database.database().reference(fromURL: "https://chat-50cdf.firebaseio.com/")
+            let values = ["name":name, "email":email]
+            let userRef = ref.child("users").child(uid)
+            userRef.updateChildValues(values, withCompletionBlock: { (err, ref) in
+                if err != nil{
+                    print(err?.localizedDescription)
+                    return
+                }
+                self.view.isUserInteractionEnabled = true
+                self.navigationController?.popViewController(animated: true)
+                print("DataSaved successfully.")
+            })
         }
     }
 }
