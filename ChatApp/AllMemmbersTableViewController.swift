@@ -24,6 +24,8 @@ class AllMemmbersTableViewController: UITableViewController {
                 let user = AllMembers()
                 user.name = dictionary["name"] as? String
                 user.email = dictionary["email"] as? String
+                user.id = snapShot.key
+                print(user.id)
                 self.users.append(user)
                 self.tableView.reloadData()
             }
@@ -56,6 +58,7 @@ class AllMemmbersTableViewController: UITableViewController {
 //MARK:- UITableView Delegates
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chatController = self.storyboard?.instantiateViewController(withIdentifier: "ChatViewController") as! ChatViewController
+        chatController.member = users[indexPath.row]
         self.navigationController?.pushViewController(chatController, animated: true)
     }
 

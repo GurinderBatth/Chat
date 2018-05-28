@@ -238,10 +238,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQ8-Of-T9R">
-                                                    <rect key="frame" x="306.5" y="5" width="53.5" height="34"/>
+                                                    <rect key="frame" x="298.5" y="5" width="61.5" height="34"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCc-Dk-mzz">
-                                                            <rect key="frame" x="8" y="8" width="37.5" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCc-Dk-mzz">
+                                                            <rect key="frame" x="12" y="8" width="37.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -251,10 +251,10 @@
                                                     <constraints>
                                                         <constraint firstItem="zCc-Dk-mzz" firstAttribute="centerX" secondItem="QQ8-Of-T9R" secondAttribute="centerX" id="FZC-g6-Tz5"/>
                                                         <constraint firstItem="zCc-Dk-mzz" firstAttribute="top" secondItem="QQ8-Of-T9R" secondAttribute="top" constant="8" id="M3z-ZJ-0an"/>
-                                                        <constraint firstItem="zCc-Dk-mzz" firstAttribute="leading" secondItem="QQ8-Of-T9R" secondAttribute="leading" constant="8" id="QI6-pG-YaP"/>
+                                                        <constraint firstItem="zCc-Dk-mzz" firstAttribute="leading" secondItem="QQ8-Of-T9R" secondAttribute="leading" constant="12" id="QI6-pG-YaP"/>
                                                         <constraint firstItem="zCc-Dk-mzz" firstAttribute="centerY" secondItem="QQ8-Of-T9R" secondAttribute="centerY" id="Z87-NZ-RRT"/>
                                                         <constraint firstAttribute="bottom" secondItem="zCc-Dk-mzz" secondAttribute="bottom" constant="8" id="vSB-IS-DST"/>
-                                                        <constraint firstAttribute="trailing" secondItem="zCc-Dk-mzz" secondAttribute="trailing" constant="8" id="x2s-YM-nzb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="zCc-Dk-mzz" secondAttribute="trailing" constant="12" id="x2s-YM-nzb"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -265,12 +265,15 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="QQ8-Of-T9R" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bRN-zk-4Pq" secondAttribute="leading" constant="100" id="3ST-TX-LuC"/>
+                                                <constraint firstItem="QQ8-Of-T9R" firstAttribute="top" secondItem="bRN-zk-4Pq" secondAttribute="top" constant="5" id="RXI-OV-6ik"/>
+                                                <constraint firstAttribute="bottom" secondItem="QQ8-Of-T9R" secondAttribute="bottom" constant="5" id="Vtf-RW-lIF"/>
                                                 <constraint firstItem="QQ8-Of-T9R" firstAttribute="centerY" secondItem="bRN-zk-4Pq" secondAttribute="centerY" id="aqF-85-c7Z"/>
                                                 <constraint firstAttribute="trailing" secondItem="QQ8-Of-T9R" secondAttribute="trailing" constant="15" id="q9c-td-HNV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblMessage" destination="zCc-Dk-mzz" id="IIo-0K-Fnn"/>
+                                            <outlet property="viewMessage" destination="QQ8-Of-T9R" id="wVo-vl-ifN"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReciverMessageCell" rowHeight="44" id="8Ob-5e-XxP" customClass="ChatTableViewCell" customModule="ChatApp" customModuleProvider="target">
@@ -281,23 +284,23 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAv-8k-Zwn">
-                                                    <rect key="frame" x="15" y="5" width="53.5" height="34"/>
+                                                    <rect key="frame" x="15" y="5" width="61.5" height="34"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI9-92-R3g">
-                                                            <rect key="frame" x="8" y="8" width="37.5" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QI9-92-R3g">
+                                                            <rect key="frame" x="12" y="8" width="37.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <nil key="textColor"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.073973530232211926" green="0.50803583947722364" blue="0.72336632013320923" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="QI9-92-R3g" firstAttribute="centerX" secondItem="OAv-8k-Zwn" secondAttribute="centerX" id="7ST-ma-fKB"/>
                                                         <constraint firstItem="QI9-92-R3g" firstAttribute="centerY" secondItem="OAv-8k-Zwn" secondAttribute="centerY" id="Zz7-it-Qyt"/>
-                                                        <constraint firstItem="QI9-92-R3g" firstAttribute="leading" secondItem="OAv-8k-Zwn" secondAttribute="leading" constant="8" id="gf8-nh-U3n"/>
+                                                        <constraint firstItem="QI9-92-R3g" firstAttribute="leading" secondItem="OAv-8k-Zwn" secondAttribute="leading" constant="12" id="gf8-nh-U3n"/>
                                                         <constraint firstItem="QI9-92-R3g" firstAttribute="top" secondItem="OAv-8k-Zwn" secondAttribute="top" constant="8" id="kdf-FU-E94"/>
                                                         <constraint firstAttribute="bottom" secondItem="QI9-92-R3g" secondAttribute="bottom" constant="8" id="nqv-Cy-CJ4"/>
-                                                        <constraint firstAttribute="trailing" secondItem="QI9-92-R3g" secondAttribute="trailing" constant="8" id="vp3-SE-WjV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="QI9-92-R3g" secondAttribute="trailing" constant="12" id="vp3-SE-WjV"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -309,11 +312,14 @@
                                             <constraints>
                                                 <constraint firstItem="OAv-8k-Zwn" firstAttribute="leading" secondItem="LR7-hQ-jYe" secondAttribute="leading" constant="15" id="Dd5-ez-7Zk"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OAv-8k-Zwn" secondAttribute="trailing" constant="100" id="NTA-s8-Nay"/>
+                                                <constraint firstItem="OAv-8k-Zwn" firstAttribute="top" secondItem="LR7-hQ-jYe" secondAttribute="top" constant="5" id="Pj8-FH-qq9"/>
                                                 <constraint firstItem="OAv-8k-Zwn" firstAttribute="centerY" secondItem="LR7-hQ-jYe" secondAttribute="centerY" id="hKQ-Ik-nk1"/>
+                                                <constraint firstAttribute="bottom" secondItem="OAv-8k-Zwn" secondAttribute="bottom" constant="5" id="uBt-Gv-vrE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblMessage" destination="QI9-92-R3g" id="CqX-Yc-k7s"/>
+                                            <outlet property="viewMessage" destination="OAv-8k-Zwn" id="dLR-M9-WiC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -10,6 +10,8 @@ import UIKit
 
 class ChatTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var viewMessage: UIView!
+    
     @IBOutlet weak var lblMessage: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     
@@ -21,6 +23,8 @@ class ChatTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.viewMessage.layer.cornerRadius = 17
+        self.viewMessage.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

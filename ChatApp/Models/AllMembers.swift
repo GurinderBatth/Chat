@@ -12,5 +12,5 @@ class AllMembers: NSObject {
 
     var name: String?
     var email: String?
-    
+    var id: String?
 }
